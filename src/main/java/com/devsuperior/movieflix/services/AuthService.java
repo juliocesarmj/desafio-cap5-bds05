@@ -27,13 +27,4 @@ public class AuthService {
 		}
 	}
 	
-	public void validateSelfOrAdmin(Long userId) {
-		
-		User user = this.authenticated();
-		
-		if(!user.getId().equals(userId) && !user.hasRole("ROLE_MEMBER")) {
-			throw new ForbiddenException("Access denied.");
-		} 
-	}
-
 }
